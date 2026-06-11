@@ -20,22 +20,19 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="分享一个神秘的 Manacher+SA+Hash 的做法，请先学会以上知识再开启。 这个问题显然可以拆成两半处理，对于 $\forall i\in [1,n]$，我们分别求 $[1,i]$ 内不同正回文串数量以及 $[i,n]$ 内不同非正回文串数量。 先考虑处理前半段，这里求奇数长度回文串，显然的，我们可以用 Manacher 直接跑。可是题目要求的是不同的，于是乎，我们会很容易的想到可以用前缀">
-<meta property="og:type" content="article">
-<meta property="og:title" content="P8631 [蓝桥杯 2015 国 AC] 切开字符串">
-<meta property="og:url" content="http://example.com/2026/06/02/P8631-%E8%93%9D%E6%A1%A5%E6%9D%AF-2015-%E5%9B%BD-AC-%E5%88%87%E5%BC%80%E5%AD%97%E7%AC%A6%E4%B8%B2/index.html">
+  <meta name="description" content="你好，我是 ericzc，一个热爱算法和编程的小伙伴，也是一名 Hexo 博客爱好者。   平时喜欢折腾代码、刷题、研究各种数据结构和算法，同时偶尔也会玩玩游戏放松。   🎮 我的兴趣：  喜欢 原神 (Genshin Impact)，尤其爱探索提瓦特大陆的奇妙世界   喜欢尝试新技术、新框架   热衷分享知识与经验  📚 我的博客目标：  记录学习笔记、算法题解和项目心得   分享技术干货，">
+<meta property="og:type" content="website">
+<meta property="og:title" content="about me">
+<meta property="og:url" content="http://example.com/about/index.html">
 <meta property="og:site_name" content="Ericzcblog">
-<meta property="og:description" content="分享一个神秘的 Manacher+SA+Hash 的做法，请先学会以上知识再开启。 这个问题显然可以拆成两半处理，对于 $\forall i\in [1,n]$，我们分别求 $[1,i]$ 内不同正回文串数量以及 $[i,n]$ 内不同非正回文串数量。 先考虑处理前半段，这里求奇数长度回文串，显然的，我们可以用 Manacher 直接跑。可是题目要求的是不同的，于是乎，我们会很容易的想到可以用前缀">
+<meta property="og:description" content="你好，我是 ericzc，一个热爱算法和编程的小伙伴，也是一名 Hexo 博客爱好者。   平时喜欢折腾代码、刷题、研究各种数据结构和算法，同时偶尔也会玩玩游戏放松。   🎮 我的兴趣：  喜欢 原神 (Genshin Impact)，尤其爱探索提瓦特大陆的奇妙世界   喜欢尝试新技术、新框架   热衷分享知识与经验  📚 我的博客目标：  记录学习笔记、算法题解和项目心得   分享技术干货，">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://cdn.luogu.com.cn/upload/image_hosting/lnaut6mz.png">
-<meta property="article:published_time" content="2026-06-02T09:39:21.000Z">
-<meta property="article:modified_time" content="2026-06-11T09:31:18.000Z">
+<meta property="article:published_time" content="2026-06-11T09:16:31.000Z">
+<meta property="article:modified_time" content="2026-06-11T09:21:38.000Z">
 <meta property="article:author" content="Ericzc">
-<meta property="article:tag" content="-题解 -字符串">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://cdn.luogu.com.cn/upload/image_hosting/lnaut6mz.png">
 
-<link rel="canonical" href="http://example.com/2026/06/02/P8631-%E8%93%9D%E6%A1%A5%E6%9D%AF-2015-%E5%9B%BD-AC-%E5%88%87%E5%BC%80%E5%AD%97%E7%AC%A6%E4%B8%B2/">
+<link rel="canonical" href="http://example.com/about/">
 
 
 <script id="page-configurations">
@@ -43,12 +40,13 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : true,
+    isPost : false,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>P8631 [蓝桥杯 2015 国 AC] 切开字符串 | Ericzcblog</title>
+  <title>about me | Ericzcblog
+</title>
   
 
 
@@ -161,112 +159,58 @@
       <div class="main-inner">
         <div class="content-wrap">
           
+  
+  
 
-          <div class="content post posts-expand">
+          <div class="content page posts-expand">
             
 
     
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2026/06/02/P8631-%E8%93%9D%E6%A1%A5%E6%9D%AF-2015-%E5%9B%BD-AC-%E5%88%87%E5%BC%80%E5%AD%97%E7%AC%A6%E4%B8%B2/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Ericzc">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Ericzcblog">
-    </span>
+    
+    
+    <div class="post-block" lang="zh-CN">
       <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          P8631 [蓝桥杯 2015 国 AC] 切开字符串
-        </h1>
 
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
+<h1 class="post-title" itemprop="name headline">about me
+</h1>
 
-              <time title="创建时间：2026-06-02 17:39:21" itemprop="dateCreated datePublished" datetime="2026-06-02T17:39:21+08:00">2026-06-02</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2026-06-11 17:31:18" itemprop="dateModified" datetime="2026-06-11T17:31:18+08:00">2026-06-11</time>
-              </span>
+<div class="post-meta">
+  
 
-          
-          
-            <span class="post-author">
-              <i class="fa fa-user"></i>
-              Ericzc
-            </span>
-          
-          
-            <span class="post-tags">
-              <i class="fa fa-tags"></i>
-              
-                <a href="/"></a>
-              
-            </span>
-          
+</div>
 
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
+</header>
 
       
-        <p>分享一个神秘的 Manacher+SA+Hash 的做法，请先学会以上知识再开启。</p>
-<p>这个问题显然可以拆成两半处理，对于 $\forall i\in [1,n]$，我们分别求 $[1,i]$ <strong>内不同正回文串数量</strong>以及 $[i,n]$ <strong>内不同非正回文串数量</strong>。</p>
-<p>先考虑处理前半段，这里求奇数长度回文串，显然的，我们可以用 Manacher 直接跑。可是题目要求的是不同的，于是乎，我们会很容易的想到可以用前缀 Hash 来解决这个问题。</p>
-<p>具体的，这个 Manacher 我们<strong>无需放特殊字符</strong>，直接跑（因为求的是奇数长度回文串），观察到如果 $r&gt;i$ 那么我们继承的是之前的回文串，<strong>则之前一定有与当前相同的回文串</strong>。此时若 $i+p_i&#x3D;r$ 回文串继续向右拓展，出现了非继承的回文串，我们再用 Hash 判断是否出现过，记个数组统计右端点小于 $i$ 的“正回文串”数量，即可，记得给这样的回文串的 Hash 值打上标记。</p>
-<p>接下来，看看如何处理 $[i,n]$ 内非正回文串数量。这里我们继续将这个子问题拆分成两个问题，可以将这个子问题理解为 $[i,n]$ 内不同非正回文串数量等于 $[i,n]$ 内不同字串数量减去 $[i,n]$ 内不同正回文串数量。对于而对于 $[i,n]$ 内不同正回文串数量可以用与处理 $A$ 相同的 $[i,n]$ 内不同字串数量显然的可以用 SA 的 $height$ 数组解决。具体的，$height$ 数组是<strong>后缀排名为 $i$ 和 $i-1$ 的 $LCP$ 长度</strong>，于是我们可以从最后一个后缀插入，<strong>第 $i$ 个后缀插入一个后缀制造的“新的字串”个数即为 $n-i+1$ 减去 $rk_i$ 到离 $rk_i$ 已插入的后缀中前后最近的两个 $rk$ 排名之间分别求 $\min_{i&#x3D;rk_i}^{up}(height_i),\min_{i&#x3D;down}^{rk_i}(height_i)$ 取 $\max$ 的值</strong>，如下图所示。</p>
-<p><img src="https://cdn.luogu.com.cn/upload/image_hosting/lnaut6mz.png"></p>
-<p>这个找 $up$ 和 $down$ 显然可以用 set 维护，而求区间最小值，显然的可以用 ST 表解决（RMQ 问题的经典解决方法）。</p>
-<p>这样就可以求出 $B$ 了，最后美剧分界点求最大值即可。</p>
-<p>这样就巧妙的将 PAM+SAM 化为了简单的 Manacher+SA+Hash，个人认为思路挺清晰的。</p>
-<p>完结撒花！QAQ</p>
+      
+      
+      <div class="post-body">
+          <p>你好，我是 <a target="_blank" rel="noopener" href="https://www.luogu.com.cn/user/891062">ericzc</a>，一个热爱算法和编程的小伙伴，也是一名 Hexo 博客爱好者。  </p>
+<p>平时喜欢折腾代码、刷题、研究各种数据结构和算法，同时偶尔也会玩玩游戏放松。  </p>
+<p>🎮 我的兴趣：</p>
+<ul>
+<li>喜欢 <strong>原神 (Genshin Impact)</strong>，尤其爱探索提瓦特大陆的奇妙世界  </li>
+<li>喜欢尝试新技术、新框架  </li>
+<li>热衷分享知识与经验</li>
+</ul>
+<p>📚 我的博客目标：</p>
+<ul>
+<li>记录学习笔记、算法题解和项目心得  </li>
+<li>分享技术干货，让遇到相同问题的人少走弯路  </li>
+<li>留下成长轨迹和一些有趣的东西</li>
+</ul>
+<p>欢迎留言交流，或者分享你的原神角色和攻略！✨<br>————————————————————————————————————————-by ChatGPT 5.4</p>
 
+      </div>
+      
+      
+      
     </div>
+    
 
     
     
     
-
-      <footer class="post-footer">
-          <div class="post-tags">
-              <a href="/tags/%E9%A2%98%E8%A7%A3-%E5%AD%97%E7%AC%A6%E4%B8%B2/" rel="tag"># -题解 -字符串</a>
-          </div>
-
-        
-
-
-        
-    <div class="post-nav">
-      <div class="post-nav-item">
-    <a href="/2026/06/02/hello-world/" rel="prev" title="Hello World">
-      <i class="fa fa-chevron-left"></i> Hello World
-    </a></div>
-      <div class="post-nav-item"></div>
-    </div>
-      </footer>
-    
-  </article>
-  
-  
-  
-
 
 
           </div>
@@ -422,11 +366,6 @@
   
 
   
-      
-<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/katex@0/dist/katex.min.css">
-  <script src="//cdn.jsdelivr.net/npm/katex@0/dist/contrib/copy-tex.min.js"></script>
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/katex@0/dist/contrib/copy-tex.min.css">
-
 
   
 
@@ -441,7 +380,7 @@ NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
       repo        : 'blog-comments',
       owner       : 'ericzcchat',
       admin       : ['ericzcchat'],
-      id          : 'bdb85fd1cda73513d749bf4291da0b07',
+      id          : '3be7aa98d992907175cbd79c194399f2',
         language: 'zh-CN',
       distractionFreeMode: false
     });
