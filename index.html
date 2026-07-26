@@ -17,7 +17,7 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta property="og:type" content="website">
@@ -73,7 +73,7 @@
 </noscript>
 
 <link rel="alternate" href="/atom.xml" title="Ericzcblog" type="application/atom+xml">
-</head>
+<link href="https://cdn.bootcss.com/KaTeX/0.11.1/katex.min.css" rel="stylesheet" /></head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
   <div class="container use-motion">
@@ -100,6 +100,7 @@
 
   <div class="site-nav-right">
     <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
     </div>
   </div>
 </div>
@@ -134,11 +135,38 @@
     <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
 
   </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
   </ul>
 </nav>
 
 
 
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
 
 </div>
     </header>
@@ -157,6 +185,187 @@
 
           <div class="content index posts-expand">
             
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2026/07/26/%E6%B4%9B%E8%B0%B7-P4768-NOI2018-%E5%BD%92%E7%A8%8B%E9%A2%98%E8%A7%A3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Ericzc">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ericzcblog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2026/07/26/%E6%B4%9B%E8%B0%B7-P4768-NOI2018-%E5%BD%92%E7%A8%8B%E9%A2%98%E8%A7%A3/" class="post-title-link" itemprop="url">洛谷 P4768 [NOI2018] 归程题解</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2026-07-26 17:10:02 / 修改时间：17:31:14" itemprop="dateCreated datePublished" datetime="2026-07-26T17:10:02+08:00">2026-07-26</time>
+            </span>
+
+          
+          
+            <span class="post-author">
+              <i class="fa fa-user"></i>
+              Ericzc
+            </span>
+          
+          
+            <span class="post-tags">
+              <i class="fa fa-tags"></i>
+              
+                <a href="/"></a>, 
+              
+                <a href="/"></a>, 
+              
+                <a href="/"></a>, 
+              
+                <a href="/"></a>
+              
+            </span>
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>不会 Kruscal 重构树建议先去 <a href="/2026/07/25/kruskal-%E9%87%8D%E6%9E%84%E6%A0%91/" title="kruskal 重构树">这里</a> 学习</p>
+<h3 id="题目简述">题目简述</h3>
+<p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P4768">题目链接</a></p>
+<p>给定一张无向图，每条边有边长 (l) 和海拔 (a)。</p>
+<p>每次询问给出一个点 (v) 和海拔限制 §，只能经过海拔严格大于 § 的边，求从 (v) 到 (1) 号点的最短路。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2026/07/26/%E6%B4%9B%E8%B0%B7-P4768-NOI2018-%E5%BD%92%E7%A8%8B%E9%A2%98%E8%A7%A3/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2026/07/25/kruskal-%E9%87%8D%E6%9E%84%E6%A0%91/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Ericzc">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ericzcblog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2026/07/25/kruskal-%E9%87%8D%E6%9E%84%E6%A0%91/" class="post-title-link" itemprop="url">kruskal 重构树</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2026-07-25 14:51:24" itemprop="dateCreated datePublished" datetime="2026-07-25T14:51:24+08:00">2026-07-25</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2026-07-26 17:31:26" itemprop="dateModified" datetime="2026-07-26T17:31:26+08:00">2026-07-26</time>
+              </span>
+
+          
+          
+            <span class="post-author">
+              <i class="fa fa-user"></i>
+              Ericzc
+            </span>
+          
+          
+            <span class="post-tags">
+              <i class="fa fa-tags"></i>
+              
+                <a href="/"></a>, 
+              
+                <a href="/"></a>
+              
+            </span>
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="定义">定义</h3>
+<p>kruskal 重构树是根据 kruskal 生成树在无向图中得出的树所构造而成的树。</p>
+<h3 id="具体结构">具体结构</h3>
+<p>与 kruskal 生成树一样，先将无向图的边排序，然后按照边的顺序进行点的合并。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2026/07/25/kruskal-%E9%87%8D%E6%9E%84%E6%A0%91/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
       
   
   
@@ -192,7 +401,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2026-06-11 17:31:18" itemprop="dateModified" datetime="2026-06-11T17:31:18+08:00">2026-06-11</time>
+                <time title="修改时间：2026-07-26 17:32:20" itemprop="dateModified" datetime="2026-07-26T17:32:20+08:00">2026-07-26</time>
               </span>
 
           
@@ -205,6 +414,12 @@
           
             <span class="post-tags">
               <i class="fa fa-tags"></i>
+              
+                <a href="/"></a>, 
+              
+                <a href="/"></a>, 
+              
+                <a href="/"></a>, 
               
                 <a href="/"></a>
               
@@ -221,16 +436,16 @@
 
       
           <p>分享一个神秘的 Manacher+SA+Hash 的做法，请先学会以上知识再开启。</p>
-<p>这个问题显然可以拆成两半处理，对于 $\forall i\in [1,n]$，我们分别求 $[1,i]$ <strong>内不同正回文串数量</strong>以及 $[i,n]$ <strong>内不同非正回文串数量</strong>。</p>
+<p>这个问题显然可以拆成两半处理，对于 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">∀</mi><mi>i</mi><mo>∈</mo><mo stretchy="false">[</mo><mn>1</mn><mo separator="true">,</mo><mi>n</mi><mo stretchy="false">]</mo></mrow><annotation encoding="application/x-tex">\forall i\in [1,n]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.73354em;vertical-align:-0.0391em;"></span><span class="mord">∀</span><span class="mord mathdefault">i</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">∈</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">[</span><span class="mord">1</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">n</span><span class="mclose">]</span></span></span></span>，我们分别求 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">[</mo><mn>1</mn><mo separator="true">,</mo><mi>i</mi><mo stretchy="false">]</mo></mrow><annotation encoding="application/x-tex">[1,i]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">[</span><span class="mord">1</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">i</span><span class="mclose">]</span></span></span></span> <strong>内不同正回文串数量</strong>以及 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">[</mo><mi>i</mi><mo separator="true">,</mo><mi>n</mi><mo stretchy="false">]</mo></mrow><annotation encoding="application/x-tex">[i,n]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">[</span><span class="mord mathdefault">i</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">n</span><span class="mclose">]</span></span></span></span> <strong>内不同非正回文串数量</strong>。</p>
 <p>先考虑处理前半段，这里求奇数长度回文串，显然的，我们可以用 Manacher 直接跑。可是题目要求的是不同的，于是乎，我们会很容易的想到可以用前缀 Hash 来解决这个问题。</p>
-<p>具体的，这个 Manacher 我们<strong>无需放特殊字符</strong>，直接跑（因为求的是奇数长度回文串），观察到如果 $r&gt;i$ 那么我们继承的是之前的回文串，<strong>则之前一定有与当前相同的回文串</strong>。此时若 $i+p_i&#x3D;r$ 回文串继续向右拓展，出现了非继承的回文串，我们再用 Hash 判断是否出现过，记个数组统计右端点小于 $i$ 的“正回文串”数量，即可，记得给这样的回文串的 Hash 值打上标记。</p>
-<p>接下来，看看如何处理 $[i,n]$ 内非正回文串数量。这里我们继续将这个子问题拆分成两个问题，可以将这个子问题理解为 $[i,n]$ 内不同非正回文串数量等于 $[i,n]$ 内不同字串数量减去 $[i,n]$ 内不同正回文串数量。对于而对于 $[i,n]$ 内不同正回文串数量可以用与处理 $A$ 相同的 $[i,n]$ 内不同字串数量显然的可以用 SA 的 $height$ 数组解决。具体的，$height$ 数组是<strong>后缀排名为 $i$ 和 $i-1$ 的 $LCP$ 长度</strong>，于是我们可以从最后一个后缀插入，<strong>第 $i$ 个后缀插入一个后缀制造的“新的字串”个数即为 $n-i+1$ 减去 $rk_i$ 到离 $rk_i$ 已插入的后缀中前后最近的两个 $rk$ 排名之间分别求 $\min_{i&#x3D;rk_i}^{up}(height_i),\min_{i&#x3D;down}^{rk_i}(height_i)$ 取 $\max$ 的值</strong>，如下图所示。</p>
-<p><img src="https://cdn.luogu.com.cn/upload/image_hosting/lnaut6mz.png"></p>
-<p>这个找 $up$ 和 $down$ 显然可以用 set 维护，而求区间最小值，显然的可以用 ST 表解决（RMQ 问题的经典解决方法）。</p>
-<p>这样就可以求出 $B$ 了，最后美剧分界点求最大值即可。</p>
-<p>这样就巧妙的将 PAM+SAM 化为了简单的 Manacher+SA+Hash，个人认为思路挺清晰的。</p>
-<p>完结撒花！QAQ</p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2026/06/02/P8631-%E8%93%9D%E6%A1%A5%E6%9D%AF-2015-%E5%9B%BD-AC-%E5%88%87%E5%BC%80%E5%AD%97%E7%AC%A6%E4%B8%B2/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -296,17 +511,18 @@
 
       
           <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
+<h2 id="quick-start">Quick Start</h2>
+<h3 id="create-a-new-post">Create a new post</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
 <p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
+<h3 id="run-server">Run server</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
 <p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
+<h3 id="generate-static-files">Generate static files</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
 <p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
+<h3 id="deploy-to-remote-sites">Deploy to remote sites</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
 <p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
 
       
@@ -389,13 +605,15 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">2</span>
+          <span class="site-state-item-count">4</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">1</span>
-        <span class="site-state-item-name">标签</span>
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
 </div>
@@ -464,6 +682,10 @@
   
 
 
+
+
+  
+<script src="/js/local-search.js"></script>
 
 
 
