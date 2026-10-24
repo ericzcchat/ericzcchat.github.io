@@ -1,6 +1,6 @@
 :root {
   --body-bg-color: #eee;
-  --content-bg-color: #fff;
+  --content-bg-color: rgba(20,34,61,0.72);
   --card-bg-color: #f5f5f5;
   --text-color: #555;
   --blockquote-color: #666;
@@ -1201,6 +1201,13 @@ pre .javascript .function {
   margin: 0 auto;
   max-width: 120px;
   padding: 2px;
+  border-radius: 50%;
+}
+.site-author-image {
+  transition: transform 1s ease-out;
+}
+.site-author-image:hover {
+  transform: rotateZ(360deg);
 }
 .site-author-name {
   color: var(--text-color);
@@ -1228,7 +1235,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #ffad39;
+  background: #ec0e0f;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -1554,10 +1561,7 @@ pre .javascript .function {
   position: fixed;
   transition-property: bottom;
   z-index: 1300;
-  width: 24px;
-}
-.back-to-top span {
-  display: none;
+  width: initial;
 }
 .back-to-top:hover {
   color: #fc6423;
@@ -1615,6 +1619,14 @@ pre .javascript .function {
 }
 .use-motion .collection-header {
   opacity: 0;
+}
+.post-body p a {
+  color: #0593d3;
+  border-bottom: none;
+}
+.post-body p a:hover {
+  color: #ff106c;
+  text-decoration: underline;
 }
 .posts-collapse {
   margin-left: 35px;
@@ -2730,4 +2742,407 @@ ul.breadcrumb li + li:last-child {
   .pagination {
     margin: 8px 0 0;
   }
+}
+```css,
+body {
+  color: #dce9fa;
+}
+/* ===== 半透明窗口 ===== */
+.post-block,
+.post,
+.comments,
+.pagination,
+.card {
+  background: rgba(16,29,53,0.78) !important;
+  border: 1px solid rgba(141,235,250,0.2);
+  border-radius: 10px;
+  box-shadow: 0 8px 28px rgba(0,0,0,0.16);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+.post-block,
+.post {
+  padding: 24px;
+  margin-bottom: 22px;
+}
+/* ===== 侧边栏窗口 ===== */
+.sidebar-inner {
+  background: rgba(20,34,61,0.78) !important;
+  border: 1px solid rgba(141,235,250,0.24);
+  border-radius: 10px;
+  box-shadow: 0 8px 28px rgba(0,0,0,0.16);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+/* ===== 导航栏 ===== */
+.header-inner {
+  background: rgba(14,25,46,0.78) !important;
+  border-bottom: 1px solid rgba(141,235,250,0.2);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+/* 网站标题 */
+.site-title,
+.site-title a,
+.site-subtitle {
+  color: #e2f5ff !important;
+  opacity: 1 !important;
+}
+.site-title a:hover {
+  color: #83eaff !important;
+}
+/* 普通导航项 */
+.site-nav .menu-item a {
+  color: #c8def5 !important;
+  background: transparent !important;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  transition: all 0.25s ease;
+}
+/* 鼠标悬停：文字变深 */
+.site-nav .menu-item a:hover {
+  color: #152b48 !important;
+  background: rgba(141,235,250,0.85) !important;
+  border-color: rgba(141,235,250,0.9);
+}
+/* 当前选中项：文字变深 */
+.site-nav .menu-item-active > a,
+.site-nav .menu-item a.menu-item-active {
+  color: #152b48 !important;
+  background: linear-gradient(135deg, rgba(141,235,250,0.95), rgba(183,168,255,0.9)) !important;
+  border: 1px solid rgba(141,235,250,0.95) !important;
+  border-radius: 6px;
+  box-shadow: inset 0 0 10px rgba(141,235,250,0.1), 0 0 12px rgba(91,207,244,0.12);
+}
+/* 悬停和选中时，图标与文字统一变深 */
+.site-nav .menu-item a:hover i,
+.site-nav .menu-item a:hover span,
+.site-nav .menu-item-active > a i,
+.site-nav .menu-item-active > a span {
+  color: #152b48 !important;
+}
+/* ===== 文章标题与正文 ===== */
+.post-title,
+.post-title-link,
+.post-header .post-title,
+.post-header .post-title-link {
+  color: #eafaff !important;
+  opacity: 1 !important;
+  text-shadow: 0 0 12px rgba(105,218,255,0.16);
+  transition: color 0.3s ease;
+}
+.post-title-link:hover,
+.post-header .post-title-link:hover {
+  color: #83eaff !important;
+}
+.post-body {
+  color: #dce9fa !important;
+}
+.post-body p,
+.post-body li,
+.post-body td,
+.post-body th {
+  color: #dce9fa !important;
+}
+/* 文章元信息 */
+.post-meta,
+.post-meta a,
+.post-meta time {
+  color: #a9c2df !important;
+}
+/* 正文链接 */
+.post-body a {
+  color: #80dff2 !important;
+  border-bottom-color: rgba(128,223,242,0.45);
+  transition: color 0.3s ease;
+}
+.post-body a:hover {
+  color: #b8aaff !important;
+  border-bottom-color: #b8aaff;
+}
+/* ===== Read More 按钮 ===== */
+.post-button .btn {
+  color: #c9f6ff !important;
+  background: linear-gradient(135deg, rgba(19,38,73,0.96), rgba(48,55,103,0.94)) !important;
+  border: 1px solid rgba(141,235,250,0.45) !important;
+  border-radius: 5px;
+  padding: 7px 22px;
+  font-size: 14px;
+  letter-spacing: 1px;
+  box-shadow: 0 0 12px rgba(91,207,244,0.1), inset 0 0 12px rgba(141,235,250,0.05);
+  transition: all 0.35s ease;
+}
+.post-button .btn:hover {
+  color: #fff !important;
+  background: linear-gradient(100deg, #243c68 0%, #456f9e 45%, #7766b7 100%) !important;
+  border-color: #a4f4ff !important;
+  box-shadow: 0 0 8px rgba(141,235,250,0.35), 0 0 22px rgba(115,143,255,0.22);
+  transform: translateY(-2px);
+}
+/* ===== 头像 ===== */
+.site-author-image {
+  border-radius: 50%;
+  border: 2px solid rgba(141,235,250,0.65);
+  box-shadow: 0 0 10px rgba(141,235,250,0.25), 0 0 24px rgba(115,143,255,0.12);
+  transition: transform 1.2s ease, box-shadow 0.5s ease, border-color 0.5s ease;
+}
+.site-author-image:hover {
+  transform: rotate(360deg);
+  border-color: #b7f8ff;
+  box-shadow: 0 0 15px rgba(141,235,250,0.55), 0 0 32px rgba(155,139,255,0.3);
+}
+/* ===== 侧边栏文字 ===== */
+.sidebar,
+.sidebar-inner {
+  color: #dcecff !important;
+}
+.sidebar-inner a {
+  color: #cfe5fa !important;
+}
+.sidebar-inner a:hover {
+  color: #83eaff !important;
+}
+.site-author-name {
+  color: #f0fbff !important;
+  font-weight: 600;
+}
+.site-description {
+  color: #c6ddf5 !important;
+}
+.site-state,
+.site-state a,
+.site-state-item-name,
+.site-state-item-count {
+  color: #cfe5fa !important;
+}
+/* ===== 文章目录 ===== */
+.post-toc,
+.toc-content {
+  background: rgba(20,34,61,0.55);
+  border-radius: 8px;
+}
+.post-toc,
+.post-toc a,
+.toc-content,
+.toc-content a {
+  color: #c7dafa !important;
+}
+.post-toc .active > a,
+.post-toc a:hover {
+  color: #83eaff !important;
+}
+/* ===== 代码块 ===== */
+.highlight,
+pre {
+  background: rgba(5,13,28,0.82) !important;
+  border-color: rgba(141,235,250,0.16);
+}
+/* ===== 表格 ===== */
+table {
+  background: rgba(16,29,53,0.35);
+  border-color: rgba(141,235,250,0.2);
+}
+th,
+td {
+  color: #dce9fa !important;
+  border-color: rgba(141,235,250,0.2);
+}
+th {
+  background: rgba(69,111,158,0.32);
+}
+/* ===== 引用块 ===== */
+blockquote {
+  color: #c7d9f0;
+  background: rgba(75,103,153,0.15);
+  border-left: 3px solid #71cfe5;
+}
+/* ===== 分页 ===== */
+.pagination,
+.pagination a,
+.pagination span {
+  color: #d4e7fb !important;
+}
+.pagination .current {
+  color: #fff !important;
+  background: rgba(73,113,166,0.8) !important;
+}
+/* ===== 页脚 ===== */
+.footer,
+.footer a {
+  color: #9eb6d3 !important;
+}
+/* ===== 输入框 ===== */
+input,
+textarea {
+  color: #e2f4ff !important;
+  background: rgba(13,27,49,0.72) !important;
+  border-color: rgba(141,235,250,0.3) !important;
+}
+input::placeholder,
+textarea::placeholder {
+  color: #91aaca !important;
+}
+/* ===== 文字选中效果 ===== */
+::selection {
+  color: #fff;
+  background: rgba(83,153,207,0.7);
+}
+/* ===== 丝柯克：全站背景 ===== */
+body {
+  background: #081426 url("/images/background.png") center center/cover fixed no-repeat;
+}
+/* ===== 半透明玻璃窗口 ===== */
+.post-block,
+.post,
+.comments,
+.pagination,
+.card,
+.sidebar-inner,
+.header-inner,
+.post-toc,
+.toc-content {
+  background-color: rgba(12,25,48,0.72) !important;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-color: rgba(141,235,250,0.22);
+}
+/* 文章卡片保留圆角与阴影 */
+.post-block,
+.post,
+.comments,
+.pagination,
+.card,
+.sidebar-inner {
+  border-radius: 10px;
+  box-shadow: 0 8px 28px rgba(0,0,0,0.16);
+}
+/* 导航栏单独设置透明度 */
+.header-inner {
+  background-color: rgba(14,25,46,0.65) !important;
+}
+/* 目录背景稍微透明一些 */
+.post-toc,
+.toc-content {
+  background-color: rgba(20,34,61,0.48) !important;
+}
+/* 让页面底色透明，避免遮挡背景图片 */
+html,
+body {
+  background-color: transparent;
+}
+/* ===== 深海冰晶：代码高亮修复 ===== */
+.highlight,
+pre,
+figure.highlight {
+  color: #dce9fa !important;
+  background: rgba(5,13,28,0.92) !important;
+}
+/* 普通代码文字 */
+.highlight pre,
+.highlight code,
+.highlight span,
+pre code {
+  color: #dce9fa;
+}
+/* 注释：雾蓝灰 */
+.highlight .comment,
+.highlight .quote {
+  color: #829bb8 !important;
+}
+/* 关键字：冰晶紫 */
+.highlight .keyword,
+.highlight .selector-tag,
+.highlight .meta-keyword {
+  color: #c4a7ff !important;
+}
+/* 类型名：冰蓝 */
+.highlight .type,
+.highlight .built_in,
+.highlight .support,
+.highlight .class {
+  color: #83eaff !important;
+}
+/* 字符串：薄荷青 */
+.highlight .string,
+.highlight .char,
+.highlight .template-string {
+  color: #a5f3ce !important;
+}
+/* 数字与常量：暖金 */
+.highlight .number,
+.highlight .literal,
+.highlight .constant {
+  color: #ffd28a !important;
+}
+/* 函数名：亮蓝 */
+.highlight .function,
+.highlight .title,
+.highlight .title.function_ {
+  color: #7dbbff !important;
+}
+/* 运算符与标点 */
+.highlight .operator,
+.highlight .punctuation {
+  color: #c8d8f0 !important;
+}
+/* 变量名与普通标识符 */
+.highlight .name,
+.highlight .variable {
+  color: #dce9fa;
+}
+/* 行号 */
+.highlight .gutter,
+.highlight .gutter pre,
+.highlight .gutter .line {
+  color: #607895 !important;
+  background: rgba(3,10,22,0.75) !important;
+}
+/* 行号与代码之间的分隔线 */
+.highlight .gutter {
+  border-right: 1px solid rgba(141,235,250,0.16);
+}
+/* 代码块边框 */
+.highlight,
+figure.highlight {
+  border: 1px solid rgba(141,235,250,0.18);
+  border-radius: 8px;
+}
+/* 选中代码 */
+.highlight ::selection {
+  color: #fff !important;
+  background: rgba(83,153,207,0.65) !important;
+}
+/* ===== C++ 代码缩进：4 个空格 ===== */
+.highlight pre,
+.highlight code,
+figure.highlight pre {
+  tab-size: 4;
+  -moz-tab-size: 4;
+}
+html,
+body,
+body * {
+  cursor: none !important;
+}
+#custom-cursor {
+  position: fixed !important;
+  width: 64px !important;
+  height: 64px !important;
+  pointer-events: none !important;
+  z-index: 2147483647 !important;
+}
+#sidebar,
+.sidebar {
+  background: transparent !important;
+  box-shadow: none !important;
+}
+.sidebar-inner.affix-top,
+.sidebar-inner.affix {
+  background: rgba(20,34,61,0.72) !important;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(141,235,250,0.22) !important;
+  box-shadow: 0 0 18px rgba(141,235,250,0.06) !important;
+  border-radius: 14px;
+  opacity: 1 !important;
 }
